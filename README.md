@@ -12,16 +12,14 @@ has the master record type as default but the record types they actually use are
 through permission sets).
 
 This trigger is a workaround that leverages a custom setting to provide administrators
-a way to provide record type conversion mappings while still using the out-of-the-box
-lead conversion page. Compared to a fully custom visualforce solution, the aim of this
-workaround is to allow simple one-to-one mappings from Lead record types to those of
-the converted Account, Contact, and Opportunity.
+a way to provide simple one-to-one record type conversion mappings while still using the out-of-the-box
+lead conversion page.
 
 Simply put, this trigger looks up a xref from the custom setting based on the lead's record type
 then for each converted object (account, contact, opportunity) it updates their record types to
 the values specified in the custom setting.
 
-On the **Salesforce IdeaExchange**, the ability to choose a record type is a highly requested feature,
+On the **Salesforce Success Community**, the ability to choose a record type is a highly requested feature,
 and I hope that this workaround will eventually not be necessary:
 * https://success.salesforce.com/ideaView?id=08730000000Bra8AAC
 * https://success.salesforce.com/answers?id=90630000000gvCcAAI
@@ -46,9 +44,7 @@ Create Custom Setting
 ---------------------
 
 The custom setting is our cross-reference mapping between Lead record types and Account, Contact, and Opportunity
-record types that we want to leverage during lead conversion process. The **name** field of the custom setting
-will hold our Lead record type names and the **three fields** on the custom setting will hold the names of the
-actual record types we want to use for those sobjects during lead conversion.
+record types that we want to leverage during lead conversion process.
 
 ![custom settings](/images/custom_settings.png)
 
@@ -57,7 +53,7 @@ Manage Custom Setting
 ---------------------
 
 Once the custom setting is defined, from its detail page click the **Manage** button to add some mappings.
-You will create a new instance of the custom setting for each of your Lead record types. If you don't use
+You will create a new instance of the custom setting for each of your Lead record types. The **name** field of the custom setting will hold our Lead record type names and the **three fields** on the custom setting will hold the names of the actual record types we want to use for those sobjects during lead conversion. If you don't use
 Opportunities then that field can be left blank. It is only used by the code if the lead converted into an opp.
 
 ![manage settings](/images/manage_custom_settings.png)
