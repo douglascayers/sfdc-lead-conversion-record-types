@@ -42,7 +42,7 @@ the apex classes in this repository. The steps are very easy to do, and I'll out
 4. Create an [Apex Test](http://help.salesforce.com/apex/HTViewHelpDoc?id=code_run_tests.htm&language=en_US)
 
 
-1. Create Custom Setting
+Create Custom Setting
 ------------------------
 
 The custom setting is our cross-reference mapping between Lead record types and Account, Contact, and Opportunity
