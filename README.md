@@ -49,4 +49,4 @@ The custom setting is our cross-reference mapping between Lead record types and 
 record types that we want to leverage during lead conversion process.
 
 The code in this repository assumes you define a custom setting as follows:
-[/images/custom_settings.png]
+![custom settings](/images/custom_settings.png)
