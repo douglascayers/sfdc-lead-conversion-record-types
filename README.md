@@ -60,6 +60,8 @@ Once the custom setting is defined, from its detail page click the **Manage** bu
 You will create a new instance of the custom setting for each of your Lead record types. If you don't use
 Opportunities then that field can be left blank. It is only used by the code if the lead converted into an opp.
 
+![manage settings](/images/manage_custom_settings.png)
+
 
 Create Apex Class, Trigger, and Test
 ------------------------------------
