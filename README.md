@@ -12,10 +12,8 @@ has the master record type as default but the record types they actually use are
 through permission sets).
 
 This trigger is a workaround that leverages a custom setting to provide administrators
-a way to provide record type conversion mappings while still using the out-of-the-box
-lead conversion page. Compared to a fully custom visualforce solution, the aim of this
-workaround is to allow simple one-to-one mappings from Lead record types to those of
-the converted Account, Contact, and Opportunity.
+a way to provide simple one-to-one record type conversion mappings while still using the out-of-the-box
+lead conversion page.
 
 Simply put, this trigger looks up a xref from the custom setting based on the lead's record type
 then for each converted object (account, contact, opportunity) it updates their record types to
