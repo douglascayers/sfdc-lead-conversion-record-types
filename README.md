@@ -19,7 +19,7 @@ Simply put, this trigger looks up a xref from the custom setting based on the le
 then for each converted object (account, contact, opportunity) it updates their record types to
 the values specified in the custom setting.
 
-On the **Salesforce IdeaExchange**, the ability to choose a record type is a highly requested feature,
+On the **Salesforce Success Community**, the ability to choose a record type is a highly requested feature,
 and I hope that this workaround will eventually not be necessary:
 * https://success.salesforce.com/ideaView?id=08730000000Bra8AAC
 * https://success.salesforce.com/answers?id=90630000000gvCcAAI
