@@ -44,9 +44,7 @@ Create Custom Setting
 ---------------------
 
 The custom setting is our cross-reference mapping between Lead record types and Account, Contact, and Opportunity
-record types that we want to leverage during lead conversion process. The **name** field of the custom setting
-will hold our Lead record type names and the **three fields** on the custom setting will hold the names of the
-actual record types we want to use for those sobjects during lead conversion.
+record types that we want to leverage during lead conversion process.
 
 ![custom settings](/images/custom_settings.png)
 
@@ -55,7 +53,7 @@ Manage Custom Setting
 ---------------------
 
 Once the custom setting is defined, from its detail page click the **Manage** button to add some mappings.
-You will create a new instance of the custom setting for each of your Lead record types. If you don't use
+You will create a new instance of the custom setting for each of your Lead record types. The **name** field of the custom setting will hold our Lead record type names and the **three fields** on the custom setting will hold the names of the actual record types we want to use for those sobjects during lead conversion. If you don't use
 Opportunities then that field can be left blank. It is only used by the code if the lead converted into an opp.
 
 ![manage settings](/images/manage_custom_settings.png)
