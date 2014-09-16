@@ -59,10 +59,15 @@ Opportunities then that field can be left blank. It is only used by the code if 
 ![manage settings](/images/manage_custom_settings.png)
 
 
-Create Apex Class, Trigger, and Test
-------------------------------------
+Deployment: How To
+==================
 
-The metadata for the helper class, its test, and the lead trigger are in this repository.
-You may deploy them to your developer or sandbox org however you are most comfortable then
-promote it to your production org when you see fit. There are lots of resources online and at
-http://developer.force.com on how to perform these steps so I won't go over them here.
+To simplify deployment of this custom code to your org, you may use the [github deploy tool](http://andyinthecloud.com/2013/09/24/deploy-direct-from-github-to-salesforce/) developed by [Andy Fawcett](https://twitter.com/andyinthecloud).
+
+To deploy in your **sandbox**:
+https://githubsfdeploy-sandbox.herokuapp.com/app/githubdeploy/douglascayers/sfdc-lead-conversion-record-types
+
+To deploy to **production**:
+https://githubsfdeploy.herokuapp.com/app/githubdeploy/douglascayers/sfdc-lead-conversion-record-types
+
+*If deploying to production via github tool fails due to tests not being run, you may opt to use Change Sets or Ant Tool or however you normally deploy your code from sandbox to production. Please use your best judgement and due diligence before making any production changes to your org.*
