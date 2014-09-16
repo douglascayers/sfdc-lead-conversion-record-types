@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Mapping of lead record types to the account, contact, and opportunity record types to use. This is workaround where lead conversion uses the &apos;default&apos; record type on a user&apos;s profile rather than allowing the user to choose the appopriate record type of all record types they have access to.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Record_Type_Name__c</fullName>
+        <description>Name of record type to use for the account during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of record type to use for the account during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</inlineHelpText>
+        <label>Account Record Type Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Record_Type_Name__c</fullName>
+        <description>Name of record type to use for the contact during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of record type to use for the contact during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</inlineHelpText>
+        <label>Contact Record Type Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type_Name__c</fullName>
+        <description>Name of record type to use for the opportunity during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of record type to use for the opportunity during lead conversion. This is same value that RecordTypeInfo.getName() will return. This is NOT the developer name.</inlineHelpText>
+        <label>Opportunity Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead Conversion Record Types Settings</label>
+</CustomObject>
