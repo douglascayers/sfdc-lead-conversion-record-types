@@ -23,6 +23,7 @@ On the **Salesforce Success Community**, the ability to choose a record type is 
 and I hope that this workaround will eventually not be necessary:
 * https://success.salesforce.com/ideaView?id=08730000000Bra8AAC
 * https://success.salesforce.com/answers?id=90630000000gvCcAAI
+* https://success.salesforce.com/0D53000001bwU9T
 
 Read the Salesforce Docs on **Lead Conversion Process** to learn more:
 * https://help.salesforce.com/HTViewHelpDoc?id=leads_notes.htm
