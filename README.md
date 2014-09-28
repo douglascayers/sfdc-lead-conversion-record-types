@@ -63,6 +63,11 @@ Opportunities then that field can be left blank. It is only used by the code if 
 Deployment: How To
 ==================
 
+<a href="https://githubsfdeploy.herokuapp.com?owner=douglascayers&repo=sfdc-lead-conversion-record-types">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
+
 To simplify deployment of this custom code to your org, you may use the [github deploy tool](http://andyinthecloud.com/2013/09/24/deploy-direct-from-github-to-salesforce/) developed by [Andy Fawcett](https://twitter.com/andyinthecloud).
 
 To deploy in your **sandbox**:
