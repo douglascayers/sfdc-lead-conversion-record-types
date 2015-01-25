@@ -1,5 +1,10 @@
-Overview
-========
+Lead Conversion
+===============
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=douglascayers&repo=sfdc-lead-conversion-record-types">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
 
 As of this writing, the Salesforce Lead Conversion process does not
 allow users to pick the record types for the converted accounts/contacts/opportunities.
@@ -60,20 +65,8 @@ Opportunities then that field can be left blank. It is only used by the code if 
 ![manage settings](/images/manage_custom_settings.png)
 
 
-Deployment: How To
-==================
+Installation
+============
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=douglascayers&repo=sfdc-lead-conversion-record-types">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
-</a>
-
-To simplify deployment of this custom code to your org, you may use the [github deploy tool](http://andyinthecloud.com/2013/09/24/deploy-direct-from-github-to-salesforce/) developed by [Andy Fawcett](https://twitter.com/andyinthecloud).
-
-To deploy in your **sandbox**:
-https://githubsfdeploy-sandbox.herokuapp.com/app/githubdeploy/douglascayers/sfdc-lead-conversion-record-types
-
-To deploy to **production**:
-https://githubsfdeploy.herokuapp.com/app/githubdeploy/douglascayers/sfdc-lead-conversion-record-types
-
-*If deploying to production via github tool fails due to tests not being run, you may opt to use Change Sets or Ant Tool or however you normally deploy your code from sandbox to production. Please use your best judgement and due diligence before making any production changes to your org.*
+1. Easily [deploy this customization](https://githubsfdeploy.herokuapp.com?owner=douglascayers&repo=sfdc-lead-conversion-record-types) to your org with the [GitHub Salesforce Deploy Tool](http://andyinthecloud.com/2013/09/24/deploy-direct-from-github-to-salesforce/) authored by [Andy Fawcett](https://twitter.com/andyinthecloud)
+2. Configure the Custom Setting as described above with appropriate lead, account, contact, and opportunity record types
