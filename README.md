@@ -34,6 +34,12 @@ Read the Salesforce Docs on **Lead Conversion Process** to learn more:
 * https://help.salesforce.com/HTViewHelpDoc?id=leads_notes.htm
 
 
+Prerequisites
+=============
+
+Before attempting to deploy these customizations, please ensure that custom record types exist for Account, Contact, Lead, and Opportunity objects. In my unscientific testing, the `recordTypeId` field on `sobjects` is not available unless custom record types exist, which will cause the apex tests to fail during deployment. This is a common "gotcha" when deploying this into new orgs. First reported by @rsmithdev6 #1.
+
+
 Getting Started
 ===============
 
