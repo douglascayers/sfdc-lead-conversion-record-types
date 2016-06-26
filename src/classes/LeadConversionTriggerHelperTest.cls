@@ -29,23 +29,18 @@ private class LeadConversionTriggerHelperTest {
     // since each org will have different record type names, just configure these
     // constants with names appropriate for your org. The test methods will
     // use them when configuring the xref custom setting, etc.
-    final static String LEAD_RECORD_TYPE_NAME = 'Activewear - Lead Record Type';
-    final static String ACCOUNT_RECORD_TYPE_NAME = 'Activewear - Account Record Type';
-    final static String CONTACT_RECORD_TYPE_NAME = 'Activewear - Contact Record Type';
-    final static String OPPORTUNITY_RECORD_TYPE_NAME = 'Activewear - Opportunity Record Type';
-
-    final static RecordTypeInfo LEAD_RECORD_TYPE_INFO = Lead.sObjectType.getDescribe().getRecordTypeInfosByName().get( LEAD_RECORD_TYPE_NAME );
-    final static RecordTypeInfo ACCOUNT_RECORD_TYPE_INFO = Account.sObjectType.getDescribe().getRecordTypeInfosByName().get( ACCOUNT_RECORD_TYPE_NAME );
-    final static RecordTypeInfo CONTACT_RECORD_TYPE_INFO = Contact.sObjectType.getDescribe().getRecordTypeInfosByName().get( CONTACT_RECORD_TYPE_NAME );
-    final static RecordTypeInfo OPPORTUNITY_RECORD_TYPE_INFO = Opportunity.sObjectType.getDescribe().getRecordTypeInfosByName().get( OPPORTUNITY_RECORD_TYPE_NAME );
+    final static RecordTypeInfo LEAD_RECORD_TYPE_INFO = Lead.sObjectType.getDescribe().getRecordTypeInfos().get(0);
+    final static RecordTypeInfo ACCOUNT_RECORD_TYPE_INFO = Account.sObjectType.getDescribe().getRecordTypeInfos().get(0);
+    final static RecordTypeInfo CONTACT_RECORD_TYPE_INFO = Contact.sObjectType.getDescribe().getRecordTypeInfos().get(0);
+    final static RecordTypeInfo OPPORTUNITY_RECORD_TYPE_INFO = Opportunity.sObjectType.getDescribe().getRecordTypeInfos().get(0);
 
     @isTest
     static void test_it_should_fail_when_missing_xref_config() {
 
         Lead newLead = new Lead(
-            firstName = 'Doug',
-            lastName = 'Ayers',
-            company = 'Fruit of the Loom, Inc'
+            firstName = 'Marc',
+            lastName = 'Benioff',
+            company = 'Salesforce'
         );
 
         insert newLead;
@@ -78,39 +73,21 @@ private class LeadConversionTriggerHelperTest {
     @isTest
     static void test_it_should_fail_when_missing_sobject_xref() {
 
-        Lead_Conversion_Record_Types_Settings__c xref = new Lead_Conversion_Record_Types_Settings__c(
-            name = LEAD_RECORD_TYPE_NAME
-        );
-
-        insert xref;
-
-        Lead newLead = new Lead(
-            firstName = 'Doug',
-            lastName = 'Ayers',
-            company = 'Fruit of the Loom, Inc',
-            recordTypeId = LEAD_RECORD_TYPE_INFO.getRecordTypeId()
-        );
-
-        insert newLead;
-
         Test.startTest();
 
         try {
 
-            Database.LeadConvert lc = new Database.LeadConvert();
-            lc.setLeadId( newLead.id );
+            Lead_Conversion_Record_Types_Settings__c xref = new Lead_Conversion_Record_Types_Settings__c(
+                name = LEAD_RECORD_TYPE_INFO.getName()
+            );
 
-            LeadStatus convertStatus = [ SELECT Id, MasterLabel FROM LeadStatus WHERE IsConverted = true LIMIT 1 ];
-            lc.setConvertedStatus( convertStatus.MasterLabel );
-
-            Database.LeadConvertResult lcr = Database.convertLead( lc );
-            System.assert( lcr.isSuccess() == false );
+            insert xref;
 
         } catch ( DmlException ex ) {
 
-            System.assert( ex.getMessage().contains( 'FIELD_CUSTOM_VALIDATION_EXCEPTION' ) );
-            System.assert( ex.getMessage().contains( 'Validation error on Lead' ) );
-            System.assert( ex.getMessage().contains( 'record type for lead conversion' ) );
+            System.assert( ex.getMessage().contains( 'REQUIRED_FIELD_MISSING' ) );
+            System.assert( ex.getMessage().contains( 'Account_Record_Type_Name__c' ) );
+            System.assert( ex.getMessage().contains( 'Contact_Record_Type_Name__c' ) );
 
         }
 
@@ -122,18 +99,18 @@ private class LeadConversionTriggerHelperTest {
     static void test_it_should_update_sobject_record_types() {
 
         Lead_Conversion_Record_Types_Settings__c xref = new Lead_Conversion_Record_Types_Settings__c(
-            name = LEAD_RECORD_TYPE_NAME,
-            account_record_type_name__c = ACCOUNT_RECORD_TYPE_NAME,
-            contact_record_type_name__c = CONTACT_RECORD_TYPE_NAME,
-            opportunity_record_type_name__c = OPPORTUNITY_RECORD_TYPE_NAME
+            name = LEAD_RECORD_TYPE_INFO.getName(),
+            account_record_type_name__c = ACCOUNT_RECORD_TYPE_INFO.getName(),
+            contact_record_type_name__c = CONTACT_RECORD_TYPE_INFO.getName(),
+            opportunity_record_type_name__c = OPPORTUNITY_RECORD_TYPE_INFO.getName()
         );
 
         insert xref;
 
         Lead newLead = new Lead(
-            firstName = 'Doug',
-            lastName = 'Ayers',
-            company = 'Fruit of the Loom, Inc',
+            firstName = 'Marc',
+            lastName = 'Benioff',
+            company = 'Salesforce',
             recordTypeId = LEAD_RECORD_TYPE_INFO.getRecordTypeId()
         );
 
