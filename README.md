@@ -1,3 +1,7 @@
+Update
+======
+Back in 2014 there was no Process Builder, so our only options for assigning record types on lead conversion were Workflow Rules and Field Updates or Apex Triggers, like this one. Since then, Salesforce released in Winter '16 [Process Builder](https://releasenotes.docs.salesforce.com/en-us/winter16/release-notes/rn_forcecom_process.htm) that lets us solve this problem with clicks-not-code. The code is here if you'd like to use it, but for new folks I recommend checking out my blog post on [Advanced Lead Conversion Using Process Builder](https://douglascayers.wordpress.com/2016/06/26/advanced-lead-conversion-with-process-builder/).
+
 Lead Conversion
 ===============
 
